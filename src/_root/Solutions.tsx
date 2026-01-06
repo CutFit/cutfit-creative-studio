@@ -1,0 +1,211 @@
+import { motion } from "framer-motion";
+import WebLayoutWrapper from "@/components/shared/WebLayoutWrapper";
+import { case_study_details } from "@/modelDataset";
+
+const Solutions = () => {
+  return (
+    <WebLayoutWrapper>
+      <section className="bg-black text-white py-24 px-6 md:px-16">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            {case_study_details.title}
+          </h2>
+          <p className="text-white/70 max-w-2xl mx-auto mt-4">
+            {case_study_details.sub_title}
+          </p>
+        </div>
+
+        {/* Section 1 – The Raw Input */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
+          <div>
+            <h3 className="text-3xl font-bold mb-4 text-[#D7263D]">The Challenge</h3>
+            <p className="text-white/70 leading-relaxed">
+             {case_study_details.challenge_description}
+            </p>
+          </div>
+
+          {/* Placeholder – Raw Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full rounded-2xl overflow-hidden"
+          >
+            <img
+              src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764772521/shoeproduct07_ivymga.png"
+              alt="Raw Phone Image"
+              className="w-full h-auto object-cover"
+            />
+            <div className="absolute bottom-3 left-3 bg-black/60 px-3 py-1 rounded-md text-sm">
+              Raw Phone Image (Before)
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Section 2 – Transformation */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-bold mb-6 text-center text-[#D7263D]">
+            The Transformation
+          </h3>
+          <p className="text-white/70 text-center max-w-3xl mx-auto mb-12">
+           {case_study_details.the_transformation} <br /> {case_study_details.our_approach}
+          </p>
+
+          {/* Before & After Reveal Animation */}
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Before */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 1 }}
+              className="relative rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-3 left-3 bg-black/60 px-3 py-1 rounded-md text-sm">
+                Before
+              </div>
+            </motion.div>
+
+            {/* After Reveal (AI Generated) */}
+            <motion.div
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              whileInView={{
+                clipPath: "inset(0 0 0 0)",
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="relative rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-3 left-3 bg-black/60 px-3 py-1 rounded-md text-sm">
+                AI Generated (After)
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              whileInView={{
+                clipPath: "inset(0 0 0 0)",
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="relative rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-3 left-3 bg-black/60 px-3 py-1 rounded-md text-sm">
+                AI Generated (After)
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              whileInView={{
+                clipPath: "inset(0 0 0 0)",
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="relative rounded-2xl overflow-hidden"
+            >
+              <img
+                src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-3 left-3 bg-black/60 px-3 py-1 rounded-md text-sm">
+                AI Generated (After)
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Section 3 – Lifestyle Campaign */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-bold mb-6 text-center">
+            Campaign Assets
+          </h3>
+          <p className="text-white/70 text-center max-w-3xl mx-auto mb-12">
+           {case_study_details.assets_heading}
+          </p>
+
+          {/* Images Grid */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.img
+              src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+              className="rounded-xl w-full h-auto object-cover"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            />
+            <motion.img
+              src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+              className="rounded-xl w-full h-auto object-cover"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            />
+            <motion.img
+              src="https://res.cloudinary.com/ddwaoyedq/image/upload/v1764534096/IMG_1453_cu2dit.jpg"
+              className="rounded-xl w-full h-auto object-cover"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+            />
+          </div>
+        </div>
+
+        {/* Section 4 – Video Block */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-bold mb-6 text-center"> 
+            Campaign Video
+          </h3>
+
+          {/* Video Placeholder */}
+          <motion.video
+            src="https://res.cloudinary.com/ddwaoyedq/video/upload/v1764850699/red-dress02_kzn04f.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="mx-auto w-full md:w-3/4 rounded-2xl shadow-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          />
+        </div>
+
+        {/* Section 5 – Outcome */}
+        <div className="text-center max-w-2xl mx-auto">
+          <h3 className="text-3xl font-bold mb-4">The Result</h3>
+          <p className="text-white/70 mb-10 leading-relaxed">
+           {case_study_details.result}
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="text-[#D7263D] text-xl font-semibold"
+          >
+           add text here
+          </motion.div>
+        </div>
+      </section>
+    </WebLayoutWrapper>
+  );
+};
+
+export default Solutions;
